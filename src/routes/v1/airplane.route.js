@@ -1,20 +1,26 @@
 const router = require("express").Router();
 
-const { AirplaneController } = require("../../controller");
-const { AirplaneMiddleware } = require("../../middlewares");
+// const { AirplaneController } = require("../../controller");
+// const { AirplaneMiddleware } = require("../../middlewares");
 
-router.post("/", AirplaneController.createAirplane);
+// router.post("/", AirplaneController.createAirplane);
 
-router.get("/", AirplaneController.getAllAirplane);
+// router.get("/", AirplaneController.getAllAirplane);
 
-router.get("/:id", AirplaneController.getAirplane);
+// router.get("/:id", AirplaneController.getAirplane);
 
-router.put(
-    "/:id",
-    AirplaneMiddleware.updateAirplane,
-    AirplaneController.updateAirplane
-);
+// router.put(
+//     "/:id",
+//     AirplaneMiddleware.updateAirplane,
+//     AirplaneController.updateAirplane
+// );
 
-router.delete("/:id", AirplaneController.deleteAirplane);
+// router.delete("/:id", AirplaneController.deleteAirplane);
+
+router.get("/", (req, res) => {
+    res.json({
+        msg: "ok",
+    });
+});
 
 module.exports = router;
